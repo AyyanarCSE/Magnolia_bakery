@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  // Swiper 1
   new Swiper(".multiple-slide-carousel", {
     loop: true,
     slidesPerView: 5,
@@ -9,33 +11,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Swiper 2
   new Swiper(".multiple-slide", {
     loop: true,
-slidesPerView: 1.5,
+    slidesPerView: 1.5,
     spaceBetween: 10,
     navigation: {
       nextEl: "#slider-button-right",
       prevEl: "#slider-button-left"
     }
   });
-// Get the close button and the overlay
-const closeBtn = document.querySelector("#button");
+
+  // Overlay close logic
+  const closeBtn = document.querySelector("#button");
   const overlay = document.querySelector("#display");
 
-  // Hide the overlay when the close button is clicked
-  closeBtn.onclick = () => {
-    overlay.style.display = "none";
-
-  };
+  // Safe check (VERY IMPORTANT)
+  if (closeBtn && overlay) {
+    closeBtn.onclick = () => {
+      overlay.style.display = "none";
+    };
+  }
 
 });
-
-// Get the close button and the overlay
-const closeBtn = document.querySelector("#button");
-  const overlay = document.querySelector("#display");
-
-  // Hide the overlay when the close button is clicked
-  closeBtn.onclick = () => {
-    overlay.style.display = "none";
-
-  };
